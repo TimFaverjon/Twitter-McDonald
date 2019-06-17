@@ -11,6 +11,8 @@ import json
 from textblob import TextBlob
 import ast
 
+import twitter_connection_setup as tcs
+
 def is_in_doc(doc,nb):
     with open(doc,"r") as document :
         req = document.readlines()
@@ -54,13 +56,7 @@ def note_sentiment(doc):
     return positif, negatif, nb_positif, nb_negatif, nb_neutre
 
 #Connexion à l'API
-consumer_key = '9AbFNUJwmjr0BYQEgYqgVEyOT'
-consumer_secret ='tI7DOyZQYJ6Y095jeP04lJow5KDaRlH09NRMrN20d8xlTr8QnR'
-access_key='1062621191830208518-hKy0EqFjrBxOGSv2sEzCELLiCVSdGS'
-access_secret='ZO2oKgh7lLr0h8EXxjRgdkjxdquMrDL9CwlPqtwImrNYT'
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_key, access_secret)
-api=tweepy.API(auth)
+api=tcs.twitter_setup2()
 
 #ouverture des deux fichiers utiles : celui qui recense les tweets sous format json; celui qui recense les id pour ne pas avoir de doublons
 fichier = open("twitt.txt", "a")
