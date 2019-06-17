@@ -14,6 +14,17 @@ def twitter_setup():
     api=tweepy.API(auth)
     return(api)
 
+consumer_key1 = 'qhwNIR7TiN8J9cvDdS7TLmjTc'
+consumer_secret1 = 'ycRFm8Tes4ym2fEArDsodDmlLqsJwdXWCbxpvFnsla74ToigHp'
+access_key1='1062264629043388416-mBsoGA2Duy4nDrfO5OYlC8goYPlshL'
+access_secret1='NXKkNI3eK0gGZCyZic17cDuiCf0JiXxOHDsnr7nq6udfr'
+auth1 = tweepy.OAuthHandler(consumer_key1, consumer_secret1)
+auth1.set_access_token(access_key1, access_secret1)
+
+def twitter_setup1():
+    api=tweepy.API(auth1)
+    return(api)
+
 
 
 
