@@ -54,7 +54,7 @@ def note_sentiment(doc):
 
 
 #Connexion à l'API
-api=tcs.twitter_setup1()
+api=tcs.twitter_setup3()
 
 #ouverture des deux fichiers utiles : celui qui recense les tweets sous format json; celui qui recense les id pour ne pas avoir de doublons
 fichier = open("twitt.txt", "a")
