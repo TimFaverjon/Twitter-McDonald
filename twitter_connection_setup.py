@@ -36,7 +36,13 @@ def twitter_setup2():
     api=tweepy.API(auth2)
     return(api)
 
+consumer_key3 = "VQgoRfkiDJUM8LhATVZiEolOQ"
+consumer_secret3 = "4WwEhs58IWJqeLiTWYL9C5xX26xNuw7nM037Mw8czDTAFAZSSW"
+auth3 = tweepy.OAuthHandler(consumer_key3, consumer_secret3)
 
+def twitter_setup3():
+    api=tweepy.API(auth3)
+    return(api)
 
 # confirm account being used for OAuth
 #print ("API NAME IS: ", api.me().name)
