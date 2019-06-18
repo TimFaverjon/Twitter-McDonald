@@ -1,17 +1,10 @@
-# Twitter App access keys for @Compte développeur
-
-
-import numpy as np
-import tweepy
-from tweepy import Stream
 import tweepy.api
-import requests
 import time
 import json
 from textblob import TextBlob
-import ast
 
-import twitter_connection_setup as tcs
+from creation_donnees import twitter_connection_setup as tcs
+
 
 def is_in_doc(doc,nb):
     with open(doc,"r") as document :
@@ -52,11 +45,11 @@ def note_sentiment(doc):
 
             except json.JSONDecodeError as e :
                 print("erreur")
-
+    
     return positif, negatif, nb_positif, nb_negatif, nb_neutre
 
 #Connexion à l'API
-api=tcs.twitter_setup1()
+api=tcs.twitter_setup()
 
 #ouverture des deux fichiers utiles : celui qui recense les tweets sous format json; celui qui recense les id pour ne pas avoir de doublons
 fichier = open("twitt.txt", "a")
@@ -85,3 +78,6 @@ while True :
     except tweepy.TweepError as e:
         print(e.reason+"\n"+"\n"+"le nombre de tweet est toujours de" + str(nombre_de_tweet("twitt.txt")))
         time.sleep(900)
+
+
+
